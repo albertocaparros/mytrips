@@ -1,0 +1,50 @@
+body {
+  font-family: "Montserrat", sans-serif;
+}
+h1 {
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 40px;
+}
+
+#map {
+  width: 100%;
+  height: 90vh;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.info-window {
+  font-family: "Montserrat", sans-serif;
+}
+.info-content {
+  color: #999;
+}
+
+.info {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  max-height: 100%;
+  overflow: hidden;
+} 
+
+.cursor:hover{
+  cursor: pointer;
+}
+
+.tripImg{
+  width:100%;
+  max-width:500px;
+  height: auto;
+}
+
+.infoContent{
+  text-align: center;
+  padding: 5px;
+}
+
+
+.max{
+  max-height: 65vh;
+  overflow: auto;
+}

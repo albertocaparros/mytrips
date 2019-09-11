@@ -1,0 +1,402 @@
+[
+  {
+    "id": 0,
+    "name": "Berlin 2008",
+    "date": "",
+    "info": "Trip to Berlin with blablaba and noseque probando info",
+    "img": "./img/berlinPraga2008/1.jpg",
+    "lat": 52.50697,
+    "long": 13.2843075,
+    "continent": "europe"
+  },
+  {
+    "id": 1,
+    "name": "Praga 2008",
+    "date": "",
+    "info": "Visited the city for two days",
+    "img": "./img/berlinPraga2008/2.jpg",
+    "lat": 50.0598054,
+    "long": 14.3251994,
+    "continent": "europe"
+  },
+  {
+    "id": 2,
+    "name": "Edinburgh 2009",
+    "date": "",
+    "info": "Lived in the Auld Reekie for two months on the summer of 2009",
+    "img": "./img/edinburgh2009/1.jpg",
+    "lat": 55.9412845,
+    "long": -3.2755495,
+    "continent": "europe"
+  },
+  {
+    "id": 3,
+    "name": "Wroclaw 2010",
+    "date": "",
+    "info": "Erasmus year in Politechnika Wrocławska",
+    "img": "./img/wroclaw2010/1.jpg",
+    "lat": 51.1271646,
+    "long": 16.921653,
+    "continent": "europe"
+  },
+  {
+    "id": 4,
+    "name": "Estocolmo 2011",
+    "date": "",
+    "info": "Visited the city during my erasmus year",
+    "img": "./img/estocolmo2011/1.jpg",
+    "lat": 59.3262416,
+    "long": 17.841629,
+    "continent": "europe"
+  },
+  {
+    "id": 5,
+    "name": "Vienna 2010",
+    "date": "",
+    "info": "Visited the city during my erasmus year",
+    "img": "./img/vienaBratislava2010/2.jpg",
+    "lat": 48.2207779,
+    "long": 16.309849,
+    "continent": "europe"
+  },
+  {
+    "id": 6,
+    "name": "Bratislava 2010",
+    "date": "",
+    "info": "Visited the city during my erasmus year",
+    "img": "./img/vienaBratislava2010/1.jpg",
+    "lat": 48.135924,
+    "long": 16.9754923,
+    "continent": "europe"
+  },
+  {
+    "id": 7,
+    "name": "Helsinki 2011",
+    "date": "",
+    "info": "Visited the city during my erasmus year",
+    "img": "./img/helsinkiTallinRigaVilnius2011/1.jpg",
+    "lat": 60.1102086,
+    "long": 24.7378254,
+    "continent": "europe"
+  },
+  {
+    "id": 8,
+    "name": "Tallin 2011",
+    "date": "",
+    "info": "Visited the city during my erasmus year",
+    "img": "./img/helsinkiTallinRigaVilnius2011/2.jpg",
+    "lat": 59.4717921,
+    "long": 24.597818,
+    "continent": "europe"
+  },
+  {
+    "id": 9,
+    "name": "Riga 2011",
+    "date": "",
+    "info": "Visited the city during my erasmus year",
+    "img": "./img/helsinkiTallinRigaVilnius2011/3.jpg",
+    "lat": 56.971583,
+    "long": 23.9887387,
+    "continent": "europe"
+  },
+  {
+    "id": 10,
+    "name": "Vilnius 2011",
+    "date": "",
+    "info": "Visited the city during my erasmus year",
+    "img": "./img/helsinkiTallinRigaVilnius2011/4.jpg",
+    "lat": 54.7002882,
+    "long": 25.1125081,
+    "continent": "europe"
+  },
+  {
+    "id": 11,
+    "name": "Gdansk 2011",
+    "date": "",
+    "info": "Visited the city during my erasmus year",
+    "img": "./img/gdansk2011/1.jpg",
+    "lat": 54.361167,
+    "long": 18.6198164,
+    "continent": "europe"
+  },
+  {
+    "id": 12,
+    "name": "Rijeka 2012",
+    "date": "",
+    "info": "Visited a friend who was doing erasmus in Croatia that year",
+    "img": "./img/rijekaLjubliana2012/1.jpg",
+    "lat": 45.3476649,
+    "long": 14.3917089,
+    "continent": "europe"
+  },
+  {
+    "id": 13,
+    "name": "Ljubliana 2012",
+    "date": "",
+    "info": "Visited a friend who was doing erasmus in Croatia that year",
+    "img": "./img/rijekaLjubliana2012/2.jpg",
+    "lat": 46.066215,
+    "long": 14.4618881,
+    "continent": "europe"
+  },
+  {
+    "id": 14,
+    "name": "Poznan 2013",
+    "date": "",
+    "info": "New years eve in Poland",
+    "img": "./img/poznan2013/1.jpg",
+    "lat": 52.4006125,
+    "long": 16.831455,
+    "continent": "europe"
+  },
+  {
+    "id": 15,
+    "name": "Dublin 2014",
+    "date": "",
+    "info": "Christmas visit to my friend",
+    "img": "./img/dublin2014/1.jpg",
+    "lat": 53.324402,
+    "long": -6.3159149,
+    "continent": "europe"
+  },
+  {
+    "id": 16,
+    "name": "Brussels 2013",
+    "date": "",
+    "info": "IBM internship in Brussels",
+    "img": "./img/brusselsGentBrugge2013/1.jpg",
+    "lat": 50.8550624,
+    "long": 4.3051791,
+    "continent": "europe"
+  },
+  {
+    "id": 17,
+    "name": "Gante 2013",
+    "date": "",
+    "info": "IBM internship in Brussels",
+    "img": "./img/brusselsGentBrugge2013/1.jpg",
+    "lat": 51.0825269,
+    "long": 3.6442742,
+    "continent": "europe"
+  },
+  {
+    "id": 18,
+    "name": "Brujas 2013",
+    "date": "",
+    "info": "IBM internship in Brussels",
+    "img": "./img/brusselsGentBrugge2013/1.jpg",
+    "lat": 51.2607605,
+    "long": 3.1519342,
+    "continent": "europe"
+  },
+  {
+    "id": 19,
+    "name": "Amsterdam 2013",
+    "date": "",
+    "info": "IBM internship in Brussels",
+    "img": "./img/amsterdam2013/1.jpg",
+    "lat": 52.3547321,
+    "long": 4.8284122,
+    "continent": "europe"
+  },
+  {
+    "id": 20,
+    "name": "Paris 2015",
+    "date": "",
+    "info": "Internship in European Data Protection Supervisor office",
+    "img": "./img/brusselsParis2015/1.jpg",
+    "lat": 48.8589101,
+    "long": 2.3119548,
+    "continent": "europe"
+  },
+  {
+    "id": 21,
+    "name": "Melbourne 2015",
+    "date": "",
+    "info": "Working holidays year in Australia",
+    "img": "./img/australia2015/3.jpg",
+    "lat": -37.9716913,
+    "long": 144.7722751,
+    "continent": "asia"
+  },
+  {
+    "id": 22,
+    "name": "Kuala Lumpur 2016",
+    "date": "",
+    "info": "Working holidays year in Australia",
+    "img": "./img/malasiaTailandia2016/3.jpg",
+    "lat": 3.138675,
+    "long": 101.616778,
+    "continent": "asia"
+  },
+  {
+    "id": 23,
+    "name": "Koh Phi Phi 2016",
+    "date": "",
+    "info": "Working holidays year in Australia",
+    "img": "./img/malasiaTailandia2016/2.jpg",
+    "lat": 7.7377083,
+    "long": 98.7418109,
+    "continent": "asia"
+  },
+  {
+    "id": 24,
+    "name": "Singapur 2016",
+    "date": "./img/malasiaTailandia2016/2.jpg",
+    "info": "Working holidays year in Australia",
+    "img": "./img/singapurSiemRiep2016/2.jpg",
+    "lat": 1.3439166,
+    "long": 103.7538334,
+    "continent": "asia"
+  },
+  {
+    "id": 25,
+    "name": "Siem Riep 2016",
+    "date": "",
+    "info": "Working holidays year in Australia",
+    "img": "./img/singapurSiemRiep2016/4.jpg",
+    "lat": 13.3547419,
+    "long": 103.8067196,
+    "continent": "asia"
+  },
+  {
+    "id": 26,
+    "name": "Yogyakarta 2016",
+    "date": "",
+    "info": "Working holidays year in Australia",
+    "img": "./img/indonesia2016/2.jpg",
+    "lat": -7.8032076,
+    "long": 110.3572925,
+    "continent": "asia"
+  },
+  {
+    "id": 27,
+    "name": "Bali 2016",
+    "date": "",
+    "info": "Working holidays year in Australia",
+    "img": "./img/indonesia2016/4.jpg",
+    "lat": -8.454692,
+    "long": 114.7907078,
+    "continent": "asia"
+  },
+  {
+    "id": 28,
+    "name": "Gili 2016",
+    "date": "",
+    "info": "Working holidays year in Australia",
+    "img": "./img/indonesia2016/3.jpg",
+    "lat": -8.3518227,
+    "long": 116.047387,
+    "continent": "asia"
+  },
+  {
+    "id": 29,
+    "name": "Sidney 2016",
+    "date": "",
+    "info": "Working holidays year in Australia",
+    "img": "./img/australiaIrene2016/4.jpg",
+    "lat": -33.8478792,
+    "long": 150.7915498,
+    "continent": "asia"
+  },
+  {
+    "id": 30,
+    "name": "Cairns 2016",
+    "date": "",
+    "info": "Working holidays year in Australia",
+    "img": "./img/australiaIrene2016/1.jpg",
+    "lat": -16.8803502,
+    "long": 145.646733,
+    "continent": "asia"
+  },
+  {
+    "id": 31,
+    "name": "Kiruna 2017",
+    "date": "",
+    "info": "Trip with my IBM friends",
+    "img": "./img/lapland2017/2.jpg",
+    "lat": 67.8537306,
+    "long": 20.221325,
+    "continent": "europe"
+  },
+  {
+    "id": 32,
+    "name": "Marrakech 2017",
+    "date": "",
+    "info": "Trip with my friend",
+    "img": "./img/marruecos2017/3.jpg",
+    "lat": 31.6347484,
+    "long": -8.0780644,
+    "continent": "europe"
+  },
+  {
+    "id": 33,
+    "name": "Bath 2018",
+    "date": "",
+    "info": "Trip with my family",
+    "img": "./img/bathOxford2018/1.jpg",
+    "lat": 51.3801748,
+    "long": -2.3996351,
+    "continent": "europe"
+  },
+  {
+    "id": 34,
+    "name": "Oxford 2018",
+    "date": "",
+    "info": "Trip with my family",
+    "img": "./img/bathOxford2018/2.jpg",
+    "lat": 51.7504642,
+    "long": -1.2826929,
+    "continent": "europe"
+  },
+  {
+    "id": 35,
+    "name": "Tokyo 2018",
+    "date": "",
+    "info": "Working holidays year in Japan",
+    "img": "./img/japon2018/3.jpg",
+    "lat": 35.6684411,
+    "long": 139.6004419,
+    "continent": "asia"
+  },
+  {
+    "id": 36,
+    "name": "Osaka 2018",
+    "date": "",
+    "info": "Working holidays year in Japan",
+    "img": "./img/japon2018/6.jpg",
+    "lat": 34.6777641,
+    "long": 135.4158532,
+    "continent": "asia"
+  },
+  {
+    "id": 37,
+    "name": "Sapporo 2018",
+    "date": "",
+    "info": "Working holidays year in Japan",
+    "img": "./img/japon2018/4.jpg",
+    "lat": 42.9855478,
+    "long": 141.1075538,
+    "continent": "asia"
+  },
+  {
+    "id": 38,
+    "name": "Okinawa 2019",
+    "date": "",
+    "info": "Working holidays year in Japan",
+    "img": "./img/japon2018/4.jpg",
+    "lat": 26.3606396,
+    "long": 127.7788782,
+    "continent": "asia"
+  },
+  {
+    "id": 39,
+    "name": "Almeria 1987",
+    "date": "",
+    "info": "Aquí nací !",
+    "img": "",
+    "lat": 36.8415612,
+    "long": -2.4746691,
+    "continent": "europe"
+  }
+]
