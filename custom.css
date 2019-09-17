@@ -48,16 +48,15 @@ h1 {
   overflow: auto;
 }
 
-#europe-locations {
-  max-height: 30vh;
+.dropdown-menu {
+  max-height: 40vh;
   overflow: auto;
 }
-
-#europe-locations::-webkit-scrollbar {
+.dropdown-menu::-webkit-scrollbar {
   width: 8px;
   background-color: #f5f5f5;
 }
 
-#europe-locations::-webkit-scrollbar-thumb {
+.dropdown-menu::-webkit-scrollbar-thumb {
   background-color: #545b62;
 }
