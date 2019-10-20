@@ -1,17 +1,47 @@
-body {
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
 }
+
+* {
+  box-sizing: border-box;
+}
+
 h1 {
   text-transform: uppercase;
   letter-spacing: 0.06em;
   margin-bottom: 40px;
 }
 
-#map {
+.container {
+  display: inline;
   width: 100%;
-  height: 75vh;
-  margin-top: 40px;
-  margin-bottom: 40px;
+  height: 100%;
+}
+
+.navbar {
+  width: 100% !important;
+}
+
+.d-flex {
+  width: 100% !important;
+  padding: 0;
+  margin: 0;
+}
+
+#map {
+  display: flex;
+  height: 95vh;
+  margin-top: 55px;
+}
+
+.bigScreenMenu {
+  display: none;
 }
 
 .info-window {

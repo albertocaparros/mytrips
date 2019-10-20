@@ -17,62 +17,96 @@
     />
   </head>
   <body>
-    <div class="container">
-      <h1 class="text-center">
-        Places I have lived and visited
-      </h1>
-
-      <p class="lead text-center">
-        Here you can find all the information about my trips around the world.
-      </p>
-      <!-- /.row-->
-      <div class="row justify-content-center">
-        <div class="col-4">
-          <div class="dropdown">
-            <button
-              class="btn btn-secondary dropdown-toggle"
-              type="button"
-              id="europe"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              Europe
-            </button>
-            <div
-              class="dropdown-menu"
-              aria-labelledby="europe"
-              id="europe-locations"
-            ></div>
+    <div class="d-flex" id="wrapper">
+      <!-- /#sidebar-wrapper -->
+      <!-- Page Content -->
+      <div id="page-content-wrapper">
+        <nav
+          class="navbar fixed-top navbar-expand-lg navbar-light bg-light border-bottom d-md-none"
+        >
+          <a class="navbar-brand">My trips map</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+              <li class="nav-item ">
+                <a class="nav-link" href="#first" id="europe">Europe</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#second" id="asia">Asia / Oceania</a>
+              </li>
+            </ul>
           </div>
-        </div>
-        <div class="col-4">
-          <div class="dropdown">
-            <button
-              class="btn btn-secondary dropdown-toggle"
-              type="button"
-              id="asia"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              Asia/Oceania
-            </button>
-            <div
-              class="dropdown-menu"
-              aria-labelledby="asia"
-              id="asia-locations"
-            ></div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="">
+      <div class="bigScreenMenu">
+        <h1 class="text-center">
+          Places I have lived and visited
+        </h1>
+
+        <p class="lead text-center">
+          Here you can find all the information about my trips around the world.
+        </p>
+        <!-- /.row-->
+        <div class="row justify-content-center">
+          <div class="col-4">
+            <div class="dropdown">
+              <button
+                class="btn btn-secondary dropdown-toggle"
+                type="button"
+                id="europe"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Europe
+              </button>
+              <div
+                class="dropdown-menu"
+                aria-labelledby="europe"
+                id="europe-locations"
+              ></div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="dropdown">
+              <button
+                class="btn btn-secondary dropdown-toggle"
+                type="button"
+                id="asia"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Asia/Oceania
+              </button>
+              <div
+                class="dropdown-menu"
+                aria-labelledby="asia"
+                id="asia-locations"
+              ></div>
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="row">
-        <div id="map"></div>
-      </div>
+      <div id="map"></div>
     </div>
     <!-- /.container-->
 
+    <!-- Scripts-->
     <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
@@ -84,8 +118,9 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
-
-
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyActsF19JVI-8H2SELdwb-IYCN5Z5L4HWE"></script>
     <script src="custom.js"></script>
+
+    <!-- /Scripts-->
   </body>
 </html>

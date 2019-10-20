@@ -9,9 +9,11 @@ $(function() {
         var mapCanvas = document.getElementById('map');
         var mapOptions = {
           center: location,
-          zoom: 3,
+          zoom: 2,
           panControl: true,
           scrollwheel: true,
+          mapTypeControl: false,
+          streetViewControl: false,
           mapTypeId: google.maps.MapTypeId.ROADMAP
         };
         var map = new google.maps.Map(mapCanvas, mapOptions);
@@ -58,7 +60,7 @@ $(function() {
                 infowindow.setContent(this.html);
                 infowindow.open(map, marker);
                 map.panTo(marker.position);
-                map.setZoom(7);
+                map.setZoom(5);
               };
             })(marker, i)
           );
@@ -80,14 +82,14 @@ $(function() {
           markers.push(marker);
         }
 
-        map.fitBounds(bounds);
+        //  map.fitBounds(bounds);
 
         var styles = mapStyle;
         map.set('styles', styles);
 
         $('#europe').click(function() {
           map.panTo(new google.maps.LatLng(52.50697, 13.2843075));
-          map.setZoom(4);
+          map.setZoom(3);
           infowindow.close();
         });
 
@@ -104,7 +106,7 @@ $(function() {
               'click'
             );
             map.panTo(markers[$(this).context.dataset.id].position);
-            map.setZoom(7);
+            map.setZoom(2);
           });
         }
 
@@ -116,4 +118,8 @@ $(function() {
   }
 
   google.maps.event.addDomListener(window, 'load', initMap);
+});
+
+$('.navbar-collapse a').click(function() {
+  $('.navbar-collapse').collapse('hide');
 });
