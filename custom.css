@@ -18,12 +18,6 @@ h1 {
   margin-bottom: 40px;
 }
 
-.container {
-  display: inline;
-  width: 100%;
-  height: 100%;
-}
-
 .navbar {
   width: 100% !important;
 }
@@ -42,6 +36,11 @@ h1 {
 
 .bigScreenMenu {
   display: none;
+}
+
+.container {
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .info-window {
@@ -78,15 +77,26 @@ h1 {
   overflow: auto;
 }
 
-.dropdown-menu {
-  max-height: 40vh;
-  overflow: auto;
-}
-.dropdown-menu::-webkit-scrollbar {
-  width: 8px;
-  background-color: #f5f5f5;
-}
+@media (min-width: 768px) {
+  .bigScreenMenu {
+    display: block;
+  }
 
-.dropdown-menu::-webkit-scrollbar-thumb {
-  background-color: #545b62;
+  .container {
+    margin: auto !important;
+    padding: auto !important;
+  }
+
+  .dropdown-menu {
+    max-height: 40vh;
+    overflow: auto;
+  }
+  .dropdown-menu::-webkit-scrollbar {
+    width: 8px;
+    background-color: #f5f5f5;
+  }
+
+  .dropdown-menu::-webkit-scrollbar-thumb {
+    background-color: #545b62;
+  }
 }

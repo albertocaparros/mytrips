@@ -7,9 +7,18 @@ $(function() {
         var markers = [];
 
         var mapCanvas = document.getElementById('map');
+
+        var zoom = 0;
+        if (!$('.bigScreenMenu').is(':visible')) {
+          zoom = 2;
+        } else {
+          zoom = 4;
+          console.log('if');
+        }
+
         var mapOptions = {
           center: location,
-          zoom: 2,
+          zoom: zoom,
           panControl: true,
           scrollwheel: true,
           mapTypeControl: false,
@@ -106,7 +115,7 @@ $(function() {
               'click'
             );
             map.panTo(markers[$(this).context.dataset.id].position);
-            map.setZoom(2);
+            map.setZoom(5);
           });
         }
 
