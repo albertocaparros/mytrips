@@ -37,11 +37,8 @@ export const action = async ({ request }) => {
   };
 
   if (Object.values(fieldErrors).some(Boolean)) {
-    console.log(fieldErrors);
     return badRequest({ fieldErrors, fields });
   }
-
-  console.log(fields);
 
   const location = await db.location.create({
     data: {

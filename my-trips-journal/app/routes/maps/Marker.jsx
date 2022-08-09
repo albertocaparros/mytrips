@@ -18,7 +18,6 @@ function Marker(options) {
   useEffect(() => {
     if (marker) {
       marker.setOptions(options);
-      console.log(options.info);
 
       marker.addListener('click', (e) => {
         var infowindow = new window.google.maps.InfoWindow();
