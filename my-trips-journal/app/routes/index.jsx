@@ -46,7 +46,7 @@ function Home() {
       </p>
       <div>
         <Wrapper
-          apiKey={'AIzaSyByC8GQGdIOKP2jv2CFmMJNpQDb38Eic5I'}
+          apiKey={''}
           render={render}>
           <Map>
             {locations.map((location) => (
