@@ -45,9 +45,7 @@ function Home() {
         track of your trips around the world using google maps
       </p>
       <div>
-        <Wrapper
-          apiKey={''}
-          render={render}>
+        <Wrapper apiKey={''} render={render}>
           <Map>
             {locations.map((location) => (
               <Marker

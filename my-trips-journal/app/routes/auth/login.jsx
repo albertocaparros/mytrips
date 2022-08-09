@@ -27,7 +27,6 @@ export const action = async ({ request }) => {
   };
 
   if (Object.values(fieldErrors).some(Boolean)) {
-    console.log(fieldErrors);
     return badRequest({ fieldErrors, fields });
   }
 
