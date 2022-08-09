@@ -23,9 +23,13 @@ export const action = async ({ request }) => {
   const form = await request.formData();
   const title = form.get('title');
   const body = form.get('body');
+  const img = form.get('img');
+  const lat = form.get('lat');
+  const lng = form.get('lng');
+  const visitDate = form.get('visitDate');
   const user = await getUser(request);
 
-  const fields = { title, body };
+  const fields = { title, body, img, lat, lng, visitDate };
 
   const fieldErrors = {
     title: validateTitle(title),
@@ -37,19 +41,29 @@ export const action = async ({ request }) => {
     return badRequest({ fieldErrors, fields });
   }
 
-  const post = await db.post.create({ data: { ...fields, userId: user.id } });
+  console.log(fields);
 
-  return redirect(`/posts/${post.id}`);
+  const location = await db.location.create({
+    data: {
+      ...fields,
+      lat: Number(lat),
+      lng: Number(lng),
+      visitDate: new Date(visitDate),
+      userId: user.id,
+    },
+  });
+
+  return redirect(`/locations/${location.id}`);
 };
 
-function NewPost() {
+function NewLocation() {
   const actionData = useActionData();
 
   return (
     <>
       <div className='page-header'>
-        <h1>New Post</h1>
-        <Link to='/posts' className='btn btn-reverse'>
+        <h1>New Location</h1>
+        <Link to='/locations' className='btn btn-reverse'>
           Back
         </Link>
       </div>
@@ -71,7 +85,43 @@ function NewPost() {
             </div>
           </div>
           <div className='form-control'>
-            <label htmlFor='body'>Post body</label>
+            <label htmlFor='img'>Picture URL</label>
+            <input
+              type='text'
+              name='img'
+              id='img'
+              defaultValue={actionData?.fields?.img}
+            />
+          </div>
+          <div className='form-control'>
+            <label htmlFor='lat'>Latitude</label>
+            <input
+              type='text'
+              name='lat'
+              id='lat'
+              defaultValue={actionData?.fields?.lat}
+            />
+          </div>
+          <div className='form-control'>
+            <label htmlFor='lng'>Longitude</label>
+            <input
+              type='text'
+              name='lng'
+              id='lng'
+              defaultValue={actionData?.fields?.lng}
+            />
+          </div>
+          <div className='form-control'>
+            <label htmlFor='visitDate'>Visit date</label>
+            <input
+              type='date'
+              name='visitDate'
+              id='visitDate'
+              defaultValue={actionData?.fields?.visitDate}
+            />
+          </div>
+          <div className='form-control'>
+            <label htmlFor='body'>Location body</label>
             <textarea
               name='body'
               id='body'
@@ -84,7 +134,7 @@ function NewPost() {
             </div>
           </div>
           <button type='submit' className='btn btn-block'>
-            Add post
+            Add location
           </button>
         </form>
       </div>
@@ -92,4 +142,4 @@ function NewPost() {
   );
 }
 
-export default NewPost;
+export default NewLocation;

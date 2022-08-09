@@ -1,6 +1,6 @@
 import { Outlet } from '@remix-run/react';
 
-function Posts() {
+function Locations() {
   return (
     <>
       <Outlet />
@@ -8,4 +8,4 @@ function Posts() {
   );
 }
 
-export default Posts;
+export default Locations;

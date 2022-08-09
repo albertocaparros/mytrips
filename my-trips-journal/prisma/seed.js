@@ -2,7 +2,7 @@ const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 
 async function seed() {
-  const john = await prisma.user.create({
+  const alberto = await prisma.user.create({
     data: {
       username: 'alberto',
       // Hash for password - twixrox
@@ -12,32 +12,32 @@ async function seed() {
   });
 
   await Promise.all(
-    getPosts().map((post) => {
-      const data = { userId: john.id, ...post };
-      return prisma.post.create({ data });
+    getLocations().map((location) => {
+      const data = { userId: alberto.id, ...location };
+      return prisma.location.create({ data });
     })
   );
 }
 
 seed();
 
-function getPosts() {
+function getLocations() {
   return [
     {
-      title: 'JavaScript Performance Tips',
-      body: `We will look at 10 simple tips and tricks to increase the speed of your code when writing JS`,
+      title: 'Berlin 2008',
+      visitDate: new Date(21, 12, 2008),
+      body: 'Trip to Berlin with blablaba and noseque probando info',
+      img: 'https://simple.wikipedia.org/wiki/Berlin#/media/File:Nr_2_Berlin_Panorama_von_der_Siegess%C3%A4ule_2021.jpg',
+      lat: 52.50697,
+      lng: 13.2843075,
     },
     {
-      title: 'Tailwind vs. Bootstrap',
-      body: `Both Tailwind and Bootstrap are very popular CSS frameworks. In this article, we will compare them`,
-    },
-    {
-      title: 'Writing Great Unit Tests',
-      body: `We will look at 10 simple tips and tricks on writing unit tests in JavaScript`,
-    },
-    {
-      title: 'What Is New In PHP 8?',
-      body: `In this article we will look at some of the new features offered in version 8 of PHP`,
+      title: 'Praga 2008',
+      visitDate: new Date(2, 6, 2008),
+      body: 'Visited the city for two days',
+      img: 'https://simple.wikipedia.org/wiki/Prague#/media/File:Prague_Montage.jpg',
+      lat: 50.0598054,
+      lng: 14.3251994,
     },
   ];
 }

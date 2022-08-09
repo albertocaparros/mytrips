@@ -5,6 +5,7 @@ import {
   Links,
   Meta,
   useLoaderData,
+  Scripts,
 } from '@remix-run/react';
 import globalStylesUrl from '~/styles/global.css';
 import { getUser } from '~/utils/session.server';
@@ -45,6 +46,7 @@ function Document({ children, title }) {
       </head>
       <body>
         {children}
+        <Scripts />
         <LiveReload />
       </body>
     </html>
@@ -63,7 +65,7 @@ function Layout({ children }) {
 
         <ul className='nav'>
           <li>
-            <Link to='/Posts'>Posts</Link>
+            <Link to='/Locations'>Locations</Link>
           </li>
           {user ? (
             <li>
