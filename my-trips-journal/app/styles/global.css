@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
 
+:root {
+  --main-bg-color: #5c6bc0;
+  --main-text-color: #ffffff;
+  --secondary-text-color: #111;
+  --darker-bg-color: #26418f;
+  --lighter-bg-color: #8e99f3;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -12,7 +20,7 @@ body {
 
 a {
   text-decoration: none;
-  color: #000;
+  color: var(--main-text-color);
 }
 
 ul {
@@ -40,7 +48,7 @@ p {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 30px;
-  background-color: #f4f4f4;
+  background-color: var(--main-bg-color);
   padding: 10px 30px;
   text-transform: uppercase;
 }
@@ -56,20 +64,20 @@ p {
 }
 
 .navbar ul li a {
-  color: #000;
+  color: var(--main-text-color);
   text-transform: uppercase;
   font-size: 14px;
   font-weight: bold;
 }
 
 .navbar ul li a:hover {
-  color: #333;
-  border-bottom: 1px solid #333;
+  color: #ddd;
+  border-bottom: 1px solid #ddd;
 }
 
 .btn {
   display: inline-block;
-  background: #000;
+  background:var(--darker-bg-color);
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -158,7 +166,7 @@ p {
   height: 20px;
 }
 
-.posts-list {
+.locations-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 20px;
@@ -166,14 +174,23 @@ p {
   align-items: flex-start;
 }
 
-.posts-list li {
+.locations-list li {
   padding: 20px;
   border: 1px #333 solid;
   border-radius: 5px;
 }
 
-.posts-list li h3 {
+.locations-list li h3
+{
   margin-bottom: 5px;
+  color: var(--secondary-text-color) ;
+}
+.locations-list li p{
+  margin-bottom: 5px;
+  color: var(--secondary-text-color) ;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .error {
@@ -200,4 +217,10 @@ p {
 
 .auth-container fieldset label {
   margin-right: 10px;
+}
+
+.tripImg {
+  max-width: 30vw;
+  height: auto;
+  max-height: 40vh;
 }

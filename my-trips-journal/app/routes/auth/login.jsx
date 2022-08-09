@@ -1,5 +1,5 @@
-import { Link, useActionData } from '@remix-run/react';
-import { redirect, json } from '@remix-run/node';
+import { useActionData } from '@remix-run/react';
+import { json } from '@remix-run/node';
 import { db } from '~/utils/db.server';
 import { login, createUserSession, register } from '~/utils/session.server';
 
@@ -40,7 +40,7 @@ export const action = async ({ request }) => {
           fieldErrors: { username: 'Invalid credentials' },
         });
       }
-      return createUserSession(user.id, '/posts');
+      return createUserSession(user.id, '/locations');
     }
     case 'register': {
       const userExists = await db.user.findFirst({ where: { username } });
@@ -60,7 +60,7 @@ export const action = async ({ request }) => {
         });
       }
 
-      return createUserSession(user.id, '/posts');
+      return createUserSession(user.id, '/locations');
     }
     default: {
       return badRequest({ fields, formError: 'Login type is not valid' });

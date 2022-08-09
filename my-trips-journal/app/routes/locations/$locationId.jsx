@@ -5,11 +5,13 @@ import { getUser } from '~/utils/session.server';
 
 export const loader = async ({ request, params }) => {
   const user = await getUser(request);
-  const post = await db.post.findUnique({ where: { id: params.postId } });
+  const location = await db.location.findUnique({
+    where: { id: params.locationId },
+  });
 
-  if (!post) throw new Error('Post not found');
+  if (!location) throw new Error('Location not found');
 
-  return { post, user };
+  return { location, user };
 };
 
 export const action = async ({ request, params }) => {
@@ -17,36 +19,38 @@ export const action = async ({ request, params }) => {
 
   if (form.get('_method') === 'delete') {
     const user = await getUser(request);
-    const post = await db.post.findUnique({ where: { id: params.postId } });
+    const location = await db.location.findUnique({
+      where: { id: params.locationId },
+    });
 
-    if (!post) throw new Error('Post not found');
+    if (!location) throw new Error('Location not found');
 
-    if (user && post.userId === user.id) {
-      await db.post.delete({ where: { id: params.postId } });
+    if (user && location.userId === user.id) {
+      await db.location.delete({ where: { id: params.locationId } });
     }
 
-    return redirect('/posts');
+    return redirect('/locations');
   }
 };
 
-function Post() {
-  const { post, user } = useLoaderData();
+function Location() {
+  const { location, user } = useLoaderData();
 
   return (
     <div>
       <div className='page-header'>
-        <h1>{post.title}</h1>
-        <Link to='/posts' className='btn btn-reverse'>
+        <h1>{location.title}</h1>
+        <Link to='/locations' className='btn btn-reverse'>
           Back
         </Link>
       </div>
 
       <div className='page-content'>
-        <p>{post.body}</p>
+        <p>{location.body}</p>
       </div>
 
       <div className='page-footer'>
-        {user.id === post.userId && (
+        {user !== null && user.id === location.userId && (
           <form method='POST'>
             <input type='hidden' name='_method' value='delete' />
             <button className='btn btn-delete'>Delete</button>
@@ -57,4 +61,4 @@ function Post() {
   );
 }
 
-export default Post;
+export default Location;
