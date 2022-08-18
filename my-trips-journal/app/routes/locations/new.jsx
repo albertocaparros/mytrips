@@ -40,6 +40,13 @@ export const action = async ({ request }) => {
     return badRequest({ fieldErrors, fields });
   }
 
+  if (!user) {
+    fieldErrors.title =
+      'Sorry! You cannot create a location if you are not logged in as a user';
+
+    return badRequest({ fieldErrors, fields });
+  }
+
   const location = await db.location.create({
     data: {
       ...fields,

@@ -85,3 +85,89 @@ export async function getUser(request: Request) {
     return null;
   }
 }
+
+export async function getUserLocations(request: Request) {
+  const user = await getUser(request);
+
+  if (user) {
+    const data = {
+      locations: await db.location.findMany({
+        where: { userId: { equals: user.id } },
+        take: 20,
+        select: { id: true, title: true, body: true },
+        orderBy: { createdAt: 'desc' },
+      }),
+    };
+
+    return data;
+  }
+  const demoLocations = [
+    {
+      id: 1,
+      title: 'Demo marker',
+      createdAt: new Date(),
+      img: 'https://www.fillmurray.com/640/360',
+      lat: 36.834402627271054,
+      lng: -2.479881891820917,
+      body: 'This is just a Demo to show the functionality! If you want to start creating your own, register a new account.',
+    },
+    {
+      id: 2,
+      title: 'Demo marker 2',
+      createdAt: new Date(),
+      img: 'https://loremflickr.com/640/360',
+      lat: 46.834402627271054,
+      lng: -12.479881891820917,
+      body: 'This is just a Demo to show the functionality! If you want to start creating your own, register a new account.',
+    },
+  ];
+  return { locations: demoLocations };
+}
+
+export async function getUserMarkers(request: Request) {
+  const user = await getUser(request);
+
+  if (user) {
+    const data = {
+      locations: await db.location.findMany({
+        where: { userId: { equals: user.id } },
+        take: 20,
+        select: {
+          id: true,
+          title: true,
+          createdAt: true,
+          img: true,
+          lat: true,
+          lng: true,
+          body: true,
+        },
+        orderBy: { createdAt: 'desc' },
+      }),
+    };
+
+    return data;
+  }
+
+  const demoMarkers = [
+    {
+      id: 1,
+      title: 'Demo marker',
+      createdAt: new Date(),
+      img: 'https://www.fillmurray.com/640/360',
+      lat: 36.834402627271054,
+      lng: -2.479881891820917,
+      body: 'This is just a Demo to show the functionality! If you want to start creating your own, register a new account.',
+    },
+    {
+      id: 2,
+      title: 'Demo marker 2',
+      createdAt: new Date(),
+      img: 'https://loremflickr.com/640/360',
+      lat: 46.834402627271054,
+      lng: -12.479881891820917,
+      body: 'This is just a Demo to show the functionality! If you want to start creating your own, register a new account.',
+    },
+  ];
+
+  return { locations: demoMarkers };
+}
