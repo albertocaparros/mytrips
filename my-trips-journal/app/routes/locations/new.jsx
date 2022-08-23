@@ -2,6 +2,7 @@ import { Link, useActionData } from '@remix-run/react';
 import { redirect, json } from '@remix-run/node';
 import { db } from '~/utils/db.server';
 import { getUser } from '~/utils/session.server';
+import { useState } from 'react';
 
 function validateTitle(title) {
   if (typeof title !== 'string' || title.length < 3) {
@@ -62,6 +63,12 @@ export const action = async ({ request }) => {
 
 function NewLocation() {
   const actionData = useActionData();
+  let [imagePreview, setImagePreview] = useState('');
+
+  const handleImagePreview = (e) => {
+    console.log(e.target.value);
+    setImagePreview(e.target.value);
+  };
 
   return (
     <>
@@ -95,7 +102,15 @@ function NewLocation() {
               name='img'
               id='img'
               defaultValue={actionData?.fields?.img}
+              onBlur={handleImagePreview}
             />
+            {imagePreview && (
+              <img
+                style={{ height: '6rem', marginLeft: '1rem', marginTop: '5px' }}
+                alt='Link incorrect'
+                src={imagePreview}
+              />
+            )}
           </div>
           <div className='form-control'>
             <label htmlFor='lat'>Latitude</label>
