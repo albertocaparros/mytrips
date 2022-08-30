@@ -15,6 +15,7 @@ function Marker(options) {
       }
     };
   }, [marker]);
+
   useEffect(() => {
     if (marker) {
       marker.setOptions(options);

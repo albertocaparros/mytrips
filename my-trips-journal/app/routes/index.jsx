@@ -2,25 +2,11 @@ import { Wrapper, Status } from '@googlemaps/react-wrapper';
 import Map from './maps/Map';
 import Marker from './maps/Marker';
 import { useLoaderData } from '@remix-run/react';
-import { db } from '~/utils/db.server';
+import keyInfo from '../apiKey.json';
+import { getUserMarkers } from '~/utils/session.server';
 
-export const loader = async () => {
-  const data = {
-    locations: await db.location.findMany({
-      take: 20,
-      select: {
-        id: true,
-        title: true,
-        createdAt: true,
-        img: true,
-        lat: true,
-        lng: true,
-        body: true,
-      },
-      orderBy: { createdAt: 'desc' },
-    }),
-  };
-  return data;
+export const loader = async ({ request }) => {
+  return await getUserMarkers(request);
 };
 
 function Home() {
@@ -45,16 +31,17 @@ function Home() {
         track of your trips around the world using google maps
       </p>
       <div>
-        <Wrapper apiKey={''} render={render}>
+        <Wrapper apiKey={keyInfo.apiKey} render={render}>
           <Map>
-            {locations.map((location) => (
-              <Marker
-                key={location.id}
-                options={{
-                  position: { lat: location.lat, lng: location.lng },
-                }}
-                info={location}></Marker>
-            ))}
+            {locations &&
+              locations.map((location) => (
+                <Marker
+                  key={location.id}
+                  options={{
+                    position: { lat: location.lat, lng: location.lng },
+                  }}
+                  info={location}></Marker>
+              ))}
           </Map>
         </Wrapper>
       </div>

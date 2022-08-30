@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import mapStyle from '../style/mapStyle';
+import mapStyle from '../../../styles/mapStyle';
 
 export const useInitializeMap = () => {
   const ref = useRef(null);
