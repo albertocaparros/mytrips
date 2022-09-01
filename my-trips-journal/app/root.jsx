@@ -65,6 +65,9 @@ function Layout({ children }) {
 
         <ul className='nav'>
           <li>
+            <Link to='/Map'>Map</Link>
+          </li>
+          <li>
             <Link to='/Locations'>Locations</Link>
           </li>
           {user ? (

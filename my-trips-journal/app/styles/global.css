@@ -33,7 +33,7 @@ p {
 
 .container {
   width: 100%;
-  max-width: 960px;
+  max-width: 80vw;
   margin: auto;
   padding: 0 30px;
 }
@@ -223,4 +223,15 @@ p {
   max-width: 30vw;
   height: auto;
   max-height: 40vh;
+}
+
+.flex-container{
+  display: flex;
+  gap: 1rem;
+}
+
+.two-column-flex-item{
+  flex: 50%;
+  min-width: 49%;
+  min-height: 80vh;
 }

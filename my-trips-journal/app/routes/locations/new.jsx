@@ -3,6 +3,9 @@ import { redirect, json } from '@remix-run/node';
 import { db } from '~/utils/db.server';
 import { getUser } from '~/utils/session.server';
 import { useState } from 'react';
+import Map from '../components/Map';
+import { Wrapper, Status } from '@googlemaps/react-wrapper';
+import keyInfo from '~/apiKey.json';
 
 function validateTitle(title) {
   if (typeof title !== 'string' || title.length < 3) {
@@ -64,6 +67,23 @@ export const action = async ({ request }) => {
 function NewLocation() {
   const actionData = useActionData();
   let [imagePreview, setImagePreview] = useState('');
+  const [position, setPosition] = useState();
+
+  const render = (status) => {
+    switch (status) {
+      case Status.LOADING:
+        return <p>Loading</p>;
+      case Status.FAILURE:
+        return <p>Failure</p>;
+      case Status.SUCCESS:
+        return <Map />;
+    }
+  };
+
+  const onClickMap = (e) => {
+    setPosition({ lat: e.latLng.lat(), lng: e.latLng.lng() });
+    console.log(e.latLng.lat());
+  };
 
   const handleImagePreview = (e) => {
     console.log(e.target.value);
@@ -79,8 +99,15 @@ function NewLocation() {
         </Link>
       </div>
 
-      <div className='page-content'>
-        <form method='POST'>
+      <p>Click on the map to get the coordinates for the new location.</p>
+      <div className='page-content flex-container'>
+        <Wrapper
+          apiKey={keyInfo.apiKey}
+          render={render}
+          className='two-column-flex-item'>
+          <Map onClickMap={onClickMap}></Map>
+        </Wrapper>
+        <form method='POST' className='two-column-flex-item'>
           <div className='form-control'>
             <label htmlFor='title'>Title</label>
             <input
@@ -119,6 +146,7 @@ function NewLocation() {
               name='lat'
               id='lat'
               defaultValue={actionData?.fields?.lat}
+              value={position?.lat}
             />
           </div>
           <div className='form-control'>
@@ -128,6 +156,7 @@ function NewLocation() {
               name='lng'
               id='lng'
               defaultValue={actionData?.fields?.lng}
+              value={position?.lng}
             />
           </div>
           <div className='form-control'>
