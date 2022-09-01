@@ -4,6 +4,7 @@ import { db } from '~/utils/db.server';
 import { getUser } from '~/utils/session.server';
 import { useState } from 'react';
 import Map from '../components/Map';
+import Loader from '../components/Loader';
 import { Wrapper, Status } from '@googlemaps/react-wrapper';
 import keyInfo from '~/apiKey.json';
 
@@ -72,9 +73,9 @@ function NewLocation() {
   const render = (status) => {
     switch (status) {
       case Status.LOADING:
-        return <p>Loading</p>;
+        return <Loader />;
       case Status.FAILURE:
-        return <p>Failure</p>;
+        return <p>Google maps is not able to load 🤔</p>;
       case Status.SUCCESS:
         return <Map />;
     }

@@ -24,7 +24,7 @@ function Marker(options) {
         var infowindow = new window.google.maps.InfoWindow();
 
         infowindow.setContent(
-          `<div><h1>${options.info.title}</h1><p>${options.info.body}</p><img src="${options.info.img}" class="tripImg"/></div>`
+          `<div><h1>${options.info.title}</h1><p>${options.info.body}</p></div>`
         );
         infowindow.open(options.map, marker);
       });

@@ -2,6 +2,8 @@ import { useLoaderData, Link } from '@remix-run/react';
 import { db } from '~/utils/db.server';
 import { redirect } from '@remix-run/node';
 import { getUser } from '~/utils/session.server';
+import { useState } from 'react';
+import Loader from '../components/Loader';
 
 const demoLocation = {
   location: {
@@ -55,6 +57,12 @@ function Location() {
   const { location, user } = useLoaderData();
   const { userId, title, body, img, visitDate } = location;
 
+  const [imageLoading, setImageLoading] = useState(true);
+
+  const onImageLoad = () => {
+    setImageLoading(false);
+  };
+
   return (
     <div>
       <div className='page-header'>
@@ -65,7 +73,14 @@ function Location() {
       </div>
 
       <div className='page-content'>
-        <img src={img} alt={title}></img>
+        <Loader loading={imageLoading} />
+        <img
+          className='tripImg'
+          src={img}
+          alt={title}
+          onLoad={onImageLoad}
+          style={{ display: imageLoading ? 'none' : 'block' }}></img>
+
         <p>{body}</p>
         <sub>
           Visited{' '}

@@ -1,6 +1,7 @@
 import { Wrapper, Status } from '@googlemaps/react-wrapper';
 import Map from '../components/Map';
 import Marker from '../components/Marker';
+import Loader from '../components/Loader';
 import { useLoaderData } from '@remix-run/react';
 import keyInfo from '../../apiKey.json';
 import { getUserMarkers } from '~/utils/session.server';
@@ -15,9 +16,9 @@ function Maps() {
   const render = (status) => {
     switch (status) {
       case Status.LOADING:
-        return <p>Loading</p>;
+        return <Loader />;
       case Status.FAILURE:
-        return <p>Failure</p>;
+        return <p>Google maps is not able to load 🤔</p>;
       case Status.SUCCESS:
         return <Map />;
     }
