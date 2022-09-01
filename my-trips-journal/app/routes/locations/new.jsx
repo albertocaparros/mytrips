@@ -86,8 +86,7 @@ function NewLocation() {
   };
 
   const handleImagePreview = (e) => {
-    console.log(e.target.value);
-    setImagePreview(e.target.value);
+    if (e.target.value.length > 10) setImagePreview(e.target.value);
   };
 
   return (
@@ -129,7 +128,7 @@ function NewLocation() {
               name='img'
               id='img'
               defaultValue={actionData?.fields?.img}
-              onBlur={handleImagePreview}
+              onChange={handleImagePreview}
             />
             {imagePreview && (
               <img
