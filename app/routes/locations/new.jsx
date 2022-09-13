@@ -1,4 +1,4 @@
-import { Link, useActionData } from '@remix-run/react';
+import { Link, useActionData, useLoaderData } from '@remix-run/react';
 import { redirect, json } from '@remix-run/node';
 import { db } from '~/utils/db.server';
 import { getUser } from '~/utils/session.server';
@@ -6,7 +6,14 @@ import { useState } from 'react';
 import Map from '../components/Map';
 import Loader from '../components/Loader';
 import { Wrapper, Status } from '@googlemaps/react-wrapper';
-import keyInfo from '~/apiKey.json';
+
+export async function loader() {
+  return json({
+    ENV: {
+      GOOGLE_MAP_API_KEY: process.env.GOOGLE_MAP_API_KEY,
+    },
+  });
+}
 
 function validateTitle(title) {
   if (typeof title !== 'string' || title.length < 3) {
@@ -69,6 +76,7 @@ function NewLocation() {
   const actionData = useActionData();
   let [imagePreview, setImagePreview] = useState('');
   const [position, setPosition] = useState();
+  const data = useLoaderData();
 
   const render = (status) => {
     switch (status) {
@@ -102,7 +110,7 @@ function NewLocation() {
       <p>Click on the map to get the coordinates for the new location.</p>
       <div className='page-content flex-container'>
         <Wrapper
-          apiKey={keyInfo.apiKey}
+          apiKey={data.ENV.GOOGLE_MAP_API_KEY}
           render={render}
           className='two-column-flex-item'>
           <Map onClickMap={onClickMap}></Map>

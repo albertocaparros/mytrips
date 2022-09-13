@@ -3,15 +3,23 @@ import Map from '../components/Map';
 import Marker from '../components/Marker';
 import Loader from '../components/Loader';
 import { useLoaderData } from '@remix-run/react';
-import keyInfo from '../../apiKey.json';
 import { getUserMarkers } from '~/utils/session.server';
 
 export const loader = async ({ request }) => {
-  return await getUserMarkers(request);
+  const env = {
+    ENV: {
+      GOOGLE_MAP_API_KEY: process.env.GOOGLE_MAP_API_KEY,
+    },
+  };
+
+  const locations = await getUserMarkers(request);
+
+  console.log(locations);
+  return { locations, env };
 };
 
 function Maps() {
-  const { locations } = useLoaderData();
+  const { locations, env } = useLoaderData();
 
   const render = (status) => {
     switch (status) {
@@ -28,11 +36,11 @@ function Maps() {
     <div className='page-content flex-container'>
       <Wrapper
         className='two-column-flex-item'
-        apiKey={keyInfo.apiKey}
+        apiKey={env.ENV.GOOGLE_MAP_API_KEY}
         render={render}>
         <Map>
           {locations &&
-            locations.map((location) => (
+            locations.locations.map((location) => (
               <Marker
                 key={location.id}
                 options={{
