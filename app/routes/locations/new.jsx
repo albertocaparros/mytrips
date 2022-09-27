@@ -91,7 +91,6 @@ function NewLocation() {
 
   const onClickMap = (e) => {
     setPosition({ lat: e.latLng.lat(), lng: e.latLng.lng() });
-    console.log(e.latLng.lat());
   };
 
   const handleImagePreview = (e) => {

@@ -14,7 +14,6 @@ export const loader = async ({ request }) => {
 
   const locations = await getUserMarkers(request);
 
-  console.log(locations);
   return { locations, env };
 };
 

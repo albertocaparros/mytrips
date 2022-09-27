@@ -93,7 +93,6 @@ function Layout({ children }) {
 }
 
 export function ErrorBoundary({ error }) {
-  console.log(error);
   return (
     <Document>
       <Layout>
