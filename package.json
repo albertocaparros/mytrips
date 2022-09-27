@@ -7,7 +7,8 @@
   "scripts": {
     "build": "remix build",
     "dev": "remix dev",
-    "start": "remix-serve build"
+    "start": "remix-serve build",
+    "prebuild": "prisma generate"
   },
   "dependencies": {
     "@googlemaps/react-wrapper": "^1.1.35",
